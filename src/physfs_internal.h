@@ -96,6 +96,8 @@ extern const PHYSFS_Archiver __PHYSFS_Archiver_LFD;
 extern const PHYSFS_Archiver __PHYSFS_Archiver_LAB;
 extern const PHYSFS_Archiver __PHYSFS_Archiver_POD;
 
+extern void *__PHYSFS_openISO9660(PHYSFS_Io *io, const char *name, int forWriting, int *claimed);
+
 /* a real C99-compliant snprintf() is in Visual Studio 2015,
    but just use this everywhere for binary compatibility. */
 #if defined(_MSC_VER)

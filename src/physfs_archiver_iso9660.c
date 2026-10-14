@@ -361,6 +361,12 @@ static void *ISO9660_openArchive(PHYSFS_Io *io, const char *filename,
 } /* ISO9660_openArchive */
 
 
+void *__PHYSFS_openISO9660(PHYSFS_Io *io, const char *name, int forWriting, int *claimed)
+{
+	return ISO9660_openArchive(io, name, forWriting, claimed);
+} /* __PHYSFS_openISO9660 */
+
+
 const PHYSFS_Archiver __PHYSFS_Archiver_ISO9660 =
 {
     CURRENT_PHYSFS_ARCHIVER_API_VERSION,
