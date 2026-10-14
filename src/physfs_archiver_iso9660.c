@@ -211,8 +211,9 @@ static int iso9660LoadEntries(PHYSFS_Io *io, const int joliet,
 
         extent += extattrlen;  /* skip extended attribute record. */
 
-        /* infinite loop, corrupt file? */
-        BAIL_IF((extent * 2048) == dirstart, PHYSFS_ERR_CORRUPT, 0);
+        /* ignore corrupt entry */
+        if ((extent * 2048) == dirstart)
+            continue;
 
         if (!iso9660AddEntry(io, joliet, isdir, base, fname, fnamelen,
                              timestamp, extent * 2048, datalen, unpkarc))
