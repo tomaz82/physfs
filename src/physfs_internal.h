@@ -95,6 +95,7 @@ extern const PHYSFS_Archiver __PHYSFS_Archiver_GOB;
 extern const PHYSFS_Archiver __PHYSFS_Archiver_LFD;
 extern const PHYSFS_Archiver __PHYSFS_Archiver_LAB;
 extern const PHYSFS_Archiver __PHYSFS_Archiver_POD;
+extern const PHYSFS_Archiver __PHYSFS_Archiver_CUEBIN;
 
 extern void *__PHYSFS_openISO9660(PHYSFS_Io *io, const char *name, int forWriting, int *claimed);
 
@@ -234,6 +235,9 @@ void __PHYSFS_smallFree(void *ptr);
 #endif
 #ifndef PHYSFS_SUPPORTS_POD
 #define PHYSFS_SUPPORTS_POD PHYSFS_SUPPORTS_DEFAULT
+#endif
+#ifndef PHYSFS_SUPPORTS_CUEBIN
+#define PHYSFS_SUPPORTS_CUEBIN PHYSFS_SUPPORTS_DEFAULT
 #endif
 
 
